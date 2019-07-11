@@ -1,0 +1,1267 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+
+}
+
+
+
+h1,
+h2,
+h3,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ccc;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: 0;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  background: #B3505E;
+  color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background: #B3505E;
+  color: black;
+  width: 90%;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  background-color: #ccc;
+  border-left: 1px solid rgb(161, 161, 161);
+}
+
+/* Style links inside the columns */
+.column a {
+  float: none;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  position: relative;
+  left: 10px;
+  top: 30px;
+}
+
+.column h3 {
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+
+#featured {
+  float: left;
+  width: 38%;
+  height: 45vh;
+  padding: 10px;
+  position: relative;
+  left: 10px;
+}
+
+.feat-img-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  grid-gap: 10px;
+  position: relative;
+  top: 10px;
+}
+
+.feat-image {
+  width: 100%;
+  height: 200px;
+  background: blue;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+}
+
+.feat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feat-text {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  font-size: 1.5rem;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.feat-text p {
+  position: relative;
+  top: 40%;
+  left: 40%;
+
+}
+
+.feat-image:hover .feat-text {
+  opacity: 1;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+  background: #B3505E;
+  color: #fff;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* end of navigation */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.slideshowContainer {
+  grid-column: 1/ span 4;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+}
+
+.imageSlides {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
+}
+
+/* add 'visible' class via Javascript */
+.visible {
+  opacity: 1;
+}
+
+.slideshowArrow {
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.slideshowArrow:hover {
+  opacity: 0.75;
+}
+
+#leftArrow {
+  position: absolute;
+  left: 1%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#rightArrow {
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.slideshowCircles {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle {
+  display: none;
+}
+
+.dot {
+  display: none;
+}
+
+.product-grid {
+  grid-column: 1 / span 5;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 10px 0;
+}
+
+.section-b {
+  grid-column: 1/1;
+  border-right: 1px solid black;
+}
+
+.section-b a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+}
+
+.section-b a:last-child {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgb(216, 18, 18);
+}
+
+
+.section-b a:hover {
+  background: #B3505E;
+  color: #fff;
+}
+
+.section-c {
+  grid-column: 2 / span 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  margin: 10px 10px 10px 20px;
+}
+
+.card {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+}
+
+.product-info-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.free-delivery {
+  width: 100%;
+  height: 50px;
+  padding-top: 1rem;
+  background: #B3505E;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.info {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.name,
+.price {
+  position: relative;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  padding-top: 30px;
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  padding-top: 1rem;
+  background: rgb(29, 51, 90);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+
+.btn:hover {
+  background: rgb(47, 120, 153);
+}
+
+.banner-1 {
+  grid-column: 1 / span 4;
+  height: 200px;
+  background-image: url(./img/beach-couple-dawn-285938.jpg);
+  background-position: center -180px;
+  background-size: cover;
+  color: #fff;
+}
+
+.banner-2 {
+  grid-column: 1 / span 4;
+  height: 200px;
+  background-image: url(./img/waistcoat.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+
+
+.banner-1 h1,
+.banner-2 h1 {
+  position: relative;
+  left: 5%;
+  top: 15%;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+
+.container {
+
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.main-img {
+  grid-column: 1 / span 3;
+  position: relative;
+  top: 10%;
+  left: 1%;
+}
+
+.main-img img,
+.imgs img {
+  width: 100%;
+}
+
+.imgs {
+  margin-right: 5px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------- */
+/* -----------------------feature-box----------------------------------- */
+
+.features {
+  grid-column: 1 / span 5;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  text-transform: uppercase;
+}
+
+.feature-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.feature-box {
+  width: 30%;
+  height: 350px;
+  background: rgb(226, 226, 226);
+  border: 1px solid rgb(196, 196, 196);
+  margin-left: 20px;
+  padding: 0.5rem;
+}
+
+.feature-box a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  top: 30px;
+}
+
+.feature-box h5 {
+  font-size: 1rem;
+  border-bottom: 1px solid #888888;
+  width: 35%;
+}
+
+.feature-box h3 {
+  font-size: 1.2rem;
+  position: relative;
+  top: 25px;
+}
+
+.feature-img-container {
+  width: 100%;
+  height: 60%;
+}
+
+.feat-image-1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/suit.jpg);
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.feat-image-2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/glasses.jpg);
+  background-position: center;
+  overflow: hidden;
+}
+
+.feat-image-3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/shoes1.jpeg);
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.feat-image-4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/hat.jpg);
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------------------- */
+/* -----------------------------footer section----------------------------- */
+/* ------------------------------------------------------------------------- */
+
+footer {
+  grid-column: 1 / span 5;
+  background: rgb(56, 56, 59);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.subscribe {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.subscribe input {
+  width: 500px;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.signup {
+  background: #B3505E;
+  height: 35px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 250px;
+  color: #fff;
+  position: relative;
+  top: 14px;
+  left: -4px;
+}
+
+.signup h4 {
+  position: relative;
+  top: -10px;
+}
+
+
+.social-media {
+  text-align: center;
+}
+
+.social-media i {
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.social-media i:hover {
+  color: blue;
+  transition: 0.5s;
+}
+
+.footer-info {
+  grid-column: 1 / span 4;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.footer-text h5 {
+  margin-left: 10px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-text a {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text p {
+  font-size: 0.7rem;
+  margin-left: 10px;
+}
+
+.footer-text a:hover {
+  background: rgb(122, 46, 46);
+}
+
+.credit-cards {
+  text-align: center;
+}
+
+.credit-cards i {
+  margin: 0 20px 10px 0;
+}
+
+/* ------------------------------------------------------ */
+/*--------------- LOGIN PAGE STYLING------------------- */
+/* ----------------------------------------------------- */
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  height: 40vh;
+  background: black;
+}
+
+form {
+  width: 600px;
+  height: 90%;
+  border: 1px solid #5f4b4b;
+  position: relative;
+
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgba(201, 201, 201, 0.91);
+}
+
+.new-cust {
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+form p {
+  font-size: 1.5rem;
+}
+
+.inputs {
+  margin: 10px;
+  position: relative;
+  right: 10px;
+  height: 35px;
+  width: 100%;
+}
+
+input {
+  margin: 10px;
+}
+
+#checkboxes {
+  width: 80%;
+  position: relative;
+  right: 10px;
+  font-size: 14px;
+}
+
+#btn {
+  width: 90%;
+  padding: 1.5rem;
+  height: 60px;
+  background-color: #2a2a2a;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  position: relative;
+  top: 10px;
+  left: 30px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+#btn:hover {
+  background-color: #bebebe;
+  transition: 0.3s;
+  color: black;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+  }
+
+  .section-b {
+    display: none;
+  }
+
+  .slideshowContainer {
+    position: relative;
+    height: 800px;
+
+  }
+
+  .imageSlides {
+    position: absolute;
+    height: 500px;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+
+
+  .section-c {
+    grid-gap: 5px;
+    grid-area: prod;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "prod"
+      "prod"
+      "prod";
+  }
+
+  .card {
+    width: 90%;
+    padding: 0.2rem;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .card:nth-child(4n +3) {
+    display: none;
+  }
+
+
+
+
+  .free-delivery {
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 15px;
+    height: 15px;
+    padding-bottom: 15px;
+  }
+
+  .banner-1,
+  .banner-2 {
+    display: none;
+  }
+
+  .card:last-child {
+    background: red;
+  }
+
+  /* -----------------------feature-box----------------------------------- */
+
+  .feature-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .feature-box {
+    width: 90%;
+    height: 300px;
+    background: rgb(226, 226, 226);
+    border: 1px solid rgb(196, 196, 196);
+    padding: 0.5rem;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .feature-box a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    top: 30px;
+  }
+
+  .feature-box h5 {
+    font-size: 1rem;
+    border-bottom: 1px solid #888888;
+    width: 100%;
+    color: black;
+
+  }
+
+  .feature-box h3 {
+    font-size: 1.2rem;
+    position: relative;
+    top: 10px;
+  }
+
+  .feature-img-container {
+    width: 100%;
+    height: 60%;
+  }
+
+  .feat-image-2 {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .name,
+  .price {
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    padding-top: 20px;
+    text-transform: uppercase;
+  }
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .info {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+  }
+
+  .info h3 {
+    position: relative;
+    top: 15px;
+    left: 0px;
+  }
+
+  .info h4 {
+    position: relative;
+  }
+
+
+  .name,
+  .price {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    width: 100%;
+    height: 15px;
+    font-size: 15px;
+    padding-bottom: 15px;
+
+  }
+
+  .btn:hover {
+    transition: 0.5s;
+    background: rgb(40, 106, 129);
+  }
+
+  .card:nth-child(4n +4) {
+    display: block;
+  }
+
+
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 1024px) {
+    .column {
+      width: 100%;
+      height: auto;
+      background: rgb(56, 56, 56);
+    }
+
+    /* Style links inside the columns */
+    .column a {
+      float: none;
+      color: rgb(255, 255, 255);
+      border-bottom: 2px solid black;
+      position: relative;
+      left: 0;
+      width: 100%;
+    }
+
+    .column a:hover {
+      width: 100%;
+      height: 100%;
+    }
+
+    .column h3 {
+      padding: 10px;
+      border-bottom: 2px solid black;
+      position: relative;
+      top: 30px;
+      left: 0;
+      color: #fff;
+    }
+
+    #featured {
+      display: none;
+    }
+
+
+
+    .topnav a:not(:first-child),
+    .dropdown .dropbtn {
+      display: none;
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+
+
+
+
+    .section-b {
+      display: none;
+    }
+
+    .section-c {
+      grid-gap: 5px;
+      grid-area: prod;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "prod"
+        "prod"
+        "prod";
+    }
+
+    .card {
+      width: 90%;
+      padding: 0.2rem;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .free-delivery {
+      text-align: center;
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-size: 15px;
+      height: 15px;
+      padding-bottom: 15px;
+    }
+
+
+
+
+    .info {
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+    }
+
+    .info h3 {
+      position: relative;
+      top: 15px;
+      left: 0px;
+    }
+
+    .info h4 {
+      position: relative;
+    }
+
+
+    .name,
+    .price {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      width: 100%;
+      height: 15px;
+      font-size: 15px;
+      padding-bottom: 15px;
+
+    }
+
+    .btn:hover {
+      transition: 0.5s;
+      background: rgb(40, 106, 129);
+    }
+
+    .banner-1,
+    .banner-2 {
+      display: none;
+    }
+
+    /* -----------------------feature-box----------------------------------- */
+
+    .feature-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .feature-box {
+      width: 90%;
+      height: 300px;
+      background: rgb(226, 226, 226);
+      border: 1px solid rgb(196, 196, 196);
+      padding: 0.5rem;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    .feature-box a {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      top: 30px;
+    }
+
+    .feature-box h5 {
+      font-size: 1rem;
+      border-bottom: 1px solid #888888;
+      width: 100%;
+      color: black;
+
+    }
+
+    .feature-box h3 {
+      font-size: 1.2rem;
+      position: relative;
+      top: 10px;
+    }
+
+    .feature-img-container {
+      width: 100%;
+      height: 60%;
+    }
+
+    .feat-image-2 {
+      background-position: center;
+      background-size: cover;
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* -----------------------------footer section----------------------------- */
+    /* ------------------------------------------------------------------------- */
+
+    footer {
+      grid-column: 1 / span 5;
+      background: rgb(56, 56, 59);
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .subscribe {
+      text-align: center;
+    }
+
+    .subscribe p {
+      font-size: 10px;
+    }
+
+    .subscribe input {
+      width: 50%;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .signup {
+      background: #B3505E;
+      color: #fff;
+      width: 50%;
+      margin: 0;
+      height: 35px;
+      position: relative;
+      top: 10px;
+    }
+
+    .signup h4 {
+      color: #fff;
+      position: relative;
+      top: -10px;
+    }
+
+    .social-media {
+      text-align: center;
+    }
+
+    .social-media i {
+      padding: 0.5rem;
+      color: #fff;
+
+      font-size: 2.5rem;
+    }
+
+    .social-media i:hover {
+      color: blue;
+      transition: 0.5s;
+    }
+
+    .footer-info {
+      display: none;
+    }
+
+    .credit-cards {
+      text-align: center;
+    }
+
+    .credit-cards i {
+      font-size: 1.5rem;
+      margin: 2px;
+    }
+
+    .credit-cards h5 {
+      padding: 1rem;
+    }
+
+    /* ------------------------------------------------------------------------------------------- */
+
+    /* login page media queries */
+
+    /* ----------------------------------------------------------------------------------------------------- */
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100vh;
+      width: 100%;
+    }
+
+    form {
+      width: 80%;
+      height: 30vh;
+      position: relative;
+      top: 0;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    form p {
+      display: none;
+    }
+
+    .new-cust {
+      position: relative;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 1024px) {
+    .topnav.responsive {
+      position: relative;
+    }
+
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .topnav.responsive .dropdown {
+      float: none;
+    }
+
+    .topnav.responsive .dropdown-content {
+      position: relative;
+    }
+
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+
+    .slideshowContainer {
+      position: relative;
+      height: 500px;
+
+    }
+
+    .imageSlides {
+      position: absolute;
+      height: 500px;
+      width: auto;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+
+    .section-c {
+      grid-gap: 5px;
+      grid-area: prod;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      position: relative;
+
+    }
+
+    .feature-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:nth-child(4n +2) {
+      display: none;
+    }
+
+    .subscribe input {
+      width: 70%;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+  }
+}
