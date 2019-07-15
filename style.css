@@ -1,12 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-
 }
-
-
 
 h1,
 h2,
@@ -86,13 +83,13 @@ h5 {
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-  background: #B3505E;
+  background: #b3505e;
   color: white;
 }
 
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
-  background: #B3505E;
+  background: #b3505e;
   color: black;
   width: 90%;
 }
@@ -178,7 +175,6 @@ h5 {
   position: relative;
   top: 40%;
   left: 40%;
-
 }
 
 .feat-image:hover .feat-text {
@@ -187,7 +183,7 @@ h5 {
 
 /* Add a background color on hover */
 .column a:hover {
-  background: #B3505E;
+  background: #b3505e;
   color: #fff;
 }
 
@@ -206,11 +202,12 @@ h5 {
 }
 
 .slideshowContainer {
-  grid-column: 1/ span 4;
+  grid-column: 1 / span 4;
   position: relative;
+  top: -160px;
   overflow: hidden;
   width: 100%;
-  height: 800px;
+  height: 1000px;
 }
 
 .imageSlides {
@@ -245,14 +242,14 @@ h5 {
 #leftArrow {
   position: absolute;
   left: 1%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
 }
 
 #rightArrow {
   position: absolute;
   right: 1%;
-  top: 50%;
+  top: 60%;
   transform: translate(50%, -50%);
 }
 
@@ -277,10 +274,13 @@ h5 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   margin: 10px 0;
+  position: relative;
+  top: -100px;
 }
 
 .section-b {
   grid-column: 1/1;
+  height: 100%;
   border-right: 1px solid black;
 }
 
@@ -298,9 +298,8 @@ h5 {
   color: rgb(216, 18, 18);
 }
 
-
 .section-b a:hover {
-  background: #B3505E;
+  background: #b3505e;
   color: #fff;
 }
 
@@ -339,7 +338,7 @@ h5 {
   width: 100%;
   height: 50px;
   padding-top: 1rem;
-  background: #B3505E;
+  background: #b3505e;
   color: #fff;
   font-size: 1.5rem;
   text-align: center;
@@ -376,8 +375,6 @@ h5 {
   cursor: pointer;
 }
 
-
-
 .btn:hover {
   background: rgb(47, 120, 153);
 }
@@ -389,6 +386,8 @@ h5 {
   background-position: center -180px;
   background-size: cover;
   color: #fff;
+  position: relative;
+  top: 30px;
 }
 
 .banner-2 {
@@ -398,9 +397,9 @@ h5 {
   background-position: center;
   background-size: cover;
   color: #fff;
+  position: relative;
+  top: 30px;
 }
-
-
 
 .banner-1 h1,
 .banner-2 h1 {
@@ -411,9 +410,7 @@ h5 {
   text-transform: uppercase;
 }
 
-
 .container {
-
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -551,7 +548,7 @@ footer {
 }
 
 .signup {
-  background: #B3505E;
+  background: #b3505e;
   height: 35px;
   border: none;
   outline: none;
@@ -567,7 +564,6 @@ footer {
   position: relative;
   top: -10px;
 }
-
 
 .social-media {
   text-align: center;
@@ -703,7 +699,6 @@ input {
 }
 
 @media screen and (max-width: 1024px) {
-
   .container {
     display: grid;
     grid-template-columns: repeat(1fr);
@@ -715,21 +710,19 @@ input {
 
   .slideshowContainer {
     position: relative;
-    height: 800px;
-
+    top: 0;
+    height: 600px;
+    width: 100%;
   }
 
   .imageSlides {
     position: absolute;
-    height: 500px;
-    width: auto;
+    height: 100px;
+    width: 80%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
   }
-
-
 
   .section-c {
     grid-gap: 5px;
@@ -739,6 +732,8 @@ input {
   }
 
   .product-grid {
+    position: relative;
+    top: 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -754,12 +749,9 @@ input {
     margin-bottom: 20px;
   }
 
-  .card:nth-child(4n +3) {
+  .card:nth-child(4n + 3) {
     display: none;
   }
-
-
-
 
   .free-delivery {
     text-align: center;
@@ -810,7 +802,6 @@ input {
     border-bottom: 1px solid #888888;
     width: 100%;
     color: black;
-
   }
 
   .feature-box h3 {
@@ -837,13 +828,7 @@ input {
     padding-top: 20px;
     text-transform: uppercase;
   }
-
-
 }
-
-
-
-
 
 @media screen and (max-width: 1024px) {
   .info {
@@ -862,7 +847,6 @@ input {
     position: relative;
   }
 
-
   .name,
   .price {
     font-size: 15px;
@@ -874,7 +858,6 @@ input {
     height: 15px;
     font-size: 15px;
     padding-bottom: 15px;
-
   }
 
   .btn:hover {
@@ -882,10 +865,9 @@ input {
     background: rgb(40, 106, 129);
   }
 
-  .card:nth-child(4n +4) {
+  .card:nth-child(4n + 4) {
     display: block;
   }
-
 
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
   @media screen and (max-width: 1024px) {
@@ -923,8 +905,6 @@ input {
       display: none;
     }
 
-
-
     .topnav a:not(:first-child),
     .dropdown .dropbtn {
       display: none;
@@ -934,10 +914,6 @@ input {
       float: right;
       display: block;
     }
-
-
-
-
 
     .section-b {
       display: none;
@@ -975,9 +951,6 @@ input {
       padding-bottom: 15px;
     }
 
-
-
-
     .info {
       display: flex;
       justify-content: space-evenly;
@@ -994,7 +967,6 @@ input {
       position: relative;
     }
 
-
     .name,
     .price {
       font-size: 15px;
@@ -1006,7 +978,6 @@ input {
       height: 15px;
       font-size: 15px;
       padding-bottom: 15px;
-
     }
 
     .btn:hover {
@@ -1051,7 +1022,6 @@ input {
       border-bottom: 1px solid #888888;
       width: 100%;
       color: black;
-
     }
 
     .feature-box h3 {
@@ -1098,7 +1068,7 @@ input {
     }
 
     .signup {
-      background: #B3505E;
+      background: #b3505e;
       color: #fff;
       width: 50%;
       margin: 0;
@@ -1212,56 +1182,78 @@ input {
       width: 100%;
       text-align: left;
     }
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .slideshowContainer {
+    position: relative;
+    height: 50vh;
+    top: 0;
   }
 
+  .imageSlides {
+    position: absolute;
+    height: 200px;
+    width: 115%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-  @media screen and (max-width: 768px) {
+  .slideshowArrow {
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+  }
 
+  #leftArrow {
+    position: absolute;
+    left: 2%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+  }
 
-    .slideshowContainer {
-      position: relative;
-      height: 500px;
+  #rightArrow {
+    position: absolute;
+    right: 2%;
+    top: 60%;
+    transform: translate(50%, -50%);
+  }
 
-    }
+  .section-c {
+    grid-gap: 5px;
+    grid-area: prod;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+  }
 
-    .imageSlides {
-      position: absolute;
-      height: 500px;
-      width: auto;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+  .feature-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-    }
+  .card:nth-child(4n + 2) {
+    display: none;
+  }
 
+  .subscribe input {
+    width: 70%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
 
-    .section-c {
-      grid-gap: 5px;
-      grid-area: prod;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      position: relative;
-
-    }
-
-    .feature-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:nth-child(4n +2) {
-      display: none;
-    }
-
-    .subscribe input {
-      width: 70%;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-      margin: 0;
-    }
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .slideshowContainer {
+    position: relative;
+    width: 100%;
+    height: 110vh;
   }
 }
