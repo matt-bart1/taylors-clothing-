@@ -172,7 +172,7 @@ h5 {
   position: absolute;
   color: #fff;
   top: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   opacity: 0;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -183,8 +183,7 @@ h5 {
 .feat-text p {
   position: relative;
   top: 40%;
-  left: 50%;
-
+  left: 40%;
 }
 
 .feat-image:hover .feat-text {
@@ -193,7 +192,8 @@ h5 {
 
 /* Add a background color on hover */
 .column a:hover {
-  background-color: #ddd;
+  background: #B3505E;
+  color: #fff;
 }
 
 /* Clear floats after the columns */
